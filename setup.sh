@@ -93,6 +93,13 @@ re_setup(){
 df_setup(){
    apt-get install binwalk bulk-extractor -y
 }
+
+pyc_setup(){
+   cd modules/decompile/pyc
+   pip install -e .
+   python setup.py install
+}
+
 net_setup
 info_setup
 com_setup
@@ -101,6 +108,7 @@ phishing_setup
 path=$(pwd)
 re_setup
 df_setup
+pyc_setup
 
 reset
 rand="$[ $RANDOM % 6 ]"
